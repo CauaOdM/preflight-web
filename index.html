@@ -1,403 +1,212 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta
-    name="description"
-    content="CRM Preflight: preparação, auditoria e estruturação de dados de CRM para campanhas e aplicações de inteligência artificial."
-  >
-  <title>CRM Preflight — Dados confiáveis antes da campanha</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CRM Preflight: preparação, auditoria e estruturação de dados de CRM para campanhas e aplicações de inteligência artificial." />
+  <meta name="theme-color" content="#0D0D0D" />
+  <title>Dragon-fly — CRM Preflight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header class="site-header">
-    <nav class="site-navigation" aria-label="Navegação principal">
-      <a class="brand" href="#inicio" aria-label="CRM Preflight — início">
-        <strong>CRM Preflight</strong>
-      </a>
+  <a class="skip-link sr-only" href="#main">Pular para o conteúdo</a>
 
-      <ul class="navigation-list">
-        <li><a href="#mercado">Mercado</a></li>
-        <li><a href="#problema">Problema</a></li>
-        <li><a href="#produto">Produto</a></li>
-        <li><a href="#funcionamento">Como funciona</a></li>
-        <li><a href="#equipe">Equipe</a></li>
-      </ul>
+  <aside class="loader" id="loader" aria-label="Carregando página">
+    <section class="loader-content">
+      <p class="loader-brand">
+        <!-- TODO: substituir o símbolo provisório pelo imagotipo Dragon-fly. -->
+        <svg class="icon brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg>
+        Dragon-fly
+      </p>
+      <p class="loader-copy">Dados confiáveis antes da campanha.</p>
+    </section>
+    <section class="loader-progress" aria-label="Progresso">
+      <p class="loader-track"><span class="loader-fill" id="loaderFill"></span></p>
+      <p class="loader-meta"><span>Preparando preflight</span><span class="loader-count" id="loaderCount">000</span></p>
+    </section>
+  </aside>
 
-      <a class="navigation-cta" href="#em-breve">Conhecer o projeto</a>
-    </nav>
+  <header class="site-header" id="siteHeader">
+    <section class="header-inner shell" aria-label="Cabeçalho principal">
+      <button class="brand" type="button" data-scroll="home" aria-label="Dragon-fly — início">
+        <span class="brand-inner">
+          <svg class="icon brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg>
+          Dragon-fly
+        </span>
+      </button>
+      <nav class="primary-nav" aria-label="Seções">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#mercado">Mercado</a></li>
+          <li><a href="#problema">Problema</a></li>
+          <li><a href="#produto">Produto</a></li>
+          <li><a href="#funcionamento">Como funciona</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+        </ul>
+      </nav>
+      <section class="header-actions" aria-label="Ações">
+        <p class="clock-chip"><span class="clock-label">Hora local</span><span class="clock-time js-time">1:00am</span><span aria-hidden="true">•</span><span class="js-date">27 setembro, 2026</span></p>
+        <button class="menu-button" id="openMenu" type="button" aria-controls="navMenu" aria-expanded="false">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="menu-text">Menu</span>
+        </button>
+      </section>
+    </section>
   </header>
 
-  <main>
-    <section id="inicio" class="hero" aria-labelledby="hero-title">
-      <header class="hero-content">
-        <p class="eyebrow"><strong>Em desenvolvimento</strong></p>
-        <h1 id="hero-title">Dados de CRM confiáveis antes de qualquer campanha ou decisão de IA.</h1>
-        <p class="hero-description">
-          O CRM Preflight está sendo desenvolvido para transformar briefings, bases e regras de
-          negócio em políticas auditáveis, diagnósticos explicáveis e dados estruturados para uso.
-        </p>
-        <p class="hero-actions">
-          <a class="primary-action" href="#produto">Conhecer a proposta</a>
-          <a class="secondary-action" href="#problema">Entender o problema</a>
-        </p>
-      </header>
-
-      <aside class="hero-summary" aria-label="Resumo da proposta">
-        <p><strong>Briefing + base + regras</strong></p>
-        <p>Política estruturada, auditoria verificável e base pronta para o próximo processo.</p>
-      </aside>
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <figure class="liquid-reveal" id="liquidReveal" aria-hidden="true">
+        <img id="heroBase" src="assets/imagem1.jpeg" alt="" />
+        <canvas id="heroCanvas"></canvas>
+      </figure>
+      <div class="hero-vignette"></div>
+      <p class="watermark">PREFLIGHT</p>
+      <section class="hero-grid shell">
+        <header class="hero-copy">
+          <p class="eyebrow">CRM Preflight · Em desenvolvimento</p>
+          <h1 class="hero-title" id="heroTitle" aria-label="Dados de CRM confiáveis antes de qualquer campanha ou decisão de inteligência artificial.">
+            <span class="hero-line" aria-hidden="true"><span>Dados de CRM confiáveis</span></span>
+            <span class="hero-line" aria-hidden="true"><span>antes de qualquer campanha</span></span>
+            <span class="hero-line" aria-hidden="true"><span>ou decisão de IA.</span></span>
+          </h1>
+          <p class="hero-description">Briefings, bases e regras de negócio transformados em políticas auditáveis, diagnósticos explicáveis e dados estruturados para uso.</p>
+          <p class="hero-actions">
+            <button class="pill dark with-icon js-open-modal" type="button">Conhecer a proposta <span class="pill-icon" aria-hidden="true">↗</span></button>
+            <button class="pill outline" type="button" data-scroll="problema">Entender o problema</button>
+          </p>
+        </header>
+        <aside class="hero-side" aria-label="Resumo do produto">
+          <article class="hero-card reveal">
+            <section class="hero-card-inner" id="heroCard" tabindex="0" role="button" aria-label="Avançar resumo">
+              <p class="hero-card-symbol">
+                <svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path fill="currentColor" d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg>
+              </p>
+              <section class="hero-card-body">
+                <header class="carousel-copy" id="carouselCopy"><p class="carousel-caption">Entrada</p><p class="carousel-title">Briefing + base + regras.</p></header>
+                <footer class="carousel-controls">
+                  <p class="carousel-dots" id="carouselDots" aria-hidden="true"></p>
+                  <p class="carousel-buttons">
+                    <button class="carousel-button" id="carouselPrev" type="button" aria-label="Anterior"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    <button class="carousel-button" id="carouselNext" type="button" aria-label="Próximo"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  </p>
+                </footer>
+              </section>
+            </section>
+          </article>
+        </aside>
+      </section>
+      <footer class="hero-status shell"><span>Produto em desenvolvimento</span><span>Validação com profissionais de CRM</span><span>Explore o projeto ↓</span></footer>
     </section>
 
-    <section id="mercado" class="market" aria-labelledby="market-title">
-      <header class="section-header">
-        <p class="eyebrow">Contexto de mercado</p>
-        <h2 id="market-title">A IA avança sobre uma infraestrutura de dados que ainda não está pronta.</h2>
-        <p>
-          O ecossistema global de CRM já movimenta bilhões, enquanto empresas ampliam o uso de
-          agentes e automações sobre dados que suas próprias equipes consideram pouco confiáveis.
-        </p>
-      </header>
-
-      <ul class="metric-list" aria-label="Indicadores de mercado e inteligência artificial">
-        <li>
-          <article class="metric-card">
-            <p class="metric-value"><strong>US$ 128 bilhões</strong></p>
-            <h3>Mercado global de CRM</h3>
-            <p>Tamanho estimado do mercado mundial de software de CRM em 2024.</p>
-            <p>
-              <small>
-                Fonte: Gartner, 2025, conforme compilação da Carly.
-              </small>
-            </p>
-          </article>
-        </li>
-
-        <li>
-          <article class="metric-card">
-            <p class="metric-value"><strong>66,7%</strong></p>
-            <h3>Mais decisões delegadas à IA</h3>
-            <p>
-              Organizações aumentaram, no último ano, a quantidade de decisões de marketing
-              delegadas a agentes autônomos.
-            </p>
-            <p><small>Fonte: Validity, State of CRM Data 2026.</small></p>
-          </article>
-        </li>
-
-        <li>
-          <article class="metric-card">
-            <p class="metric-value"><strong>21,3%</strong></p>
-            <h3>Dados realmente preparados</h3>
-            <p>
-              Apenas essa parcela dos profissionais considera seus dados de CRM muito bem
-              preparados para alimentar ferramentas de IA.
-            </p>
-            <p><small>Fonte: Validity, State of CRM Data 2026.</small></p>
-          </article>
-        </li>
-      </ul>
+    <section class="market" id="mercado" aria-labelledby="marketTitle">
+      <section class="market-grid shell">
+        <aside class="market-visual reveal">
+          <p class="eyebrow">Contexto de mercado</p>
+          <span class="market-orbit" aria-hidden="true"></span>
+          <p class="market-value"><strong>US$ 128 bi</strong><span>Tamanho estimado do mercado mundial de software de CRM em 2024.</span></p>
+        </aside>
+        <article class="market-copy">
+          <h2 class="market-statement reveal" id="marketTitle">A IA avança sobre uma infraestrutura de dados que ainda não está pronta. <span>66,7% das organizações aumentaram decisões delegadas a agentes, mas apenas 21,3% consideram seus dados muito bem preparados para IA.</span></h2>
+          <footer class="market-footer reveal" data-delay="1">
+            <button class="pill outline with-icon" type="button" data-scroll="problema">Entender o problema <span class="pill-icon" aria-hidden="true">→</span></button>
+          </footer>
+        </article>
+      </section>
     </section>
 
-    <section id="problema" class="problem" aria-labelledby="problem-title">
-      <header class="section-header">
-        <p class="eyebrow">O problema</p>
-        <h2 id="problem-title">Automatizar uma base frágil não elimina o erro. Aumenta seu alcance.</h2>
-        <p>
-          Briefings chegam em linguagem natural, regras ficam distribuídas entre pessoas e
-          ferramentas, e a conferência da audiência continua dependendo de processos manuais.
-        </p>
-      </header>
-
-      <ul class="metric-list" aria-label="Indicadores de qualidade de dados de CRM">
-        <li>
-          <article class="metric-card">
-            <p class="metric-value"><strong>71,4%</strong></p>
-            <h3>Resultados de IA prejudicados</h3>
-            <p>
-              Profissionais afirmam que dados ruins de CRM já contribuíram para resultados de IA
-              incorretos ou enganosos.
-            </p>
-            <p><small>Fonte: Validity, State of CRM Data 2026.</small></p>
-          </article>
-        </li>
-
-        <li>
-          <article class="metric-card">
-            <p class="metric-value"><strong>76%</strong></p>
-            <h3>Base incompleta ou imprecisa</h3>
-            <p>
-              Usuários dizem que menos da metade dos dados de CRM de suas organizações é precisa
-              e completa.
-            </p>
-            <p><small>Fonte: Validity, State of CRM Data Management 2025.</small></p>
-          </article>
-        </li>
-
-        <li>
-          <article class="metric-card">
-            <p class="metric-value"><strong>37%</strong></p>
-            <h3>Perda direta de receita</h3>
-            <p>
-              Organizações relatam perda de receita como consequência direta da baixa qualidade
-              dos dados.
-            </p>
-            <p><small>Fonte: Validity, State of CRM Data Management 2025.</small></p>
-          </article>
-        </li>
-
-        <li>
-          <article class="metric-card">
-            <p class="metric-value"><strong>13 horas por semana</strong></p>
-            <h3>Tempo procurando informações</h3>
-            <p>
-              Trabalhadores gastam, em média, esse tempo procurando informações básicas dentro
-              do CRM.
-            </p>
-            <p><small>Fonte: Validity, State of CRM Data Management 2025.</small></p>
-          </article>
-        </li>
-      </ul>
+    <section class="problems" id="problema" aria-labelledby="problemTitle">
+      <section class="shell">
+        <header class="section-heading"><p class="eyebrow reveal">O problema</p><h2 class="section-title reveal" data-delay="1" id="problemTitle">Automatizar uma base frágil não elimina o erro. Aumenta seu alcance.</h2></header>
+        <ul class="problem-grid">
+          <li class="reveal"><article class="problem-card"><header class="problem-meta"><span>IA — 2026</span><span class="problem-arrow">↗</span></header><p class="problem-watermark">71,4%</p><footer class="problem-bottom"><h3>Resultados de IA prejudicados</h3><p>Dados ruins de CRM já contribuíram para resultados de IA incorretos ou enganosos.</p><p class="tags"><span class="tag">Validity 2026</span><span class="tag">Qualidade</span></p></footer></article></li>
+          <li class="reveal" data-delay="1"><article class="problem-card"><header class="problem-meta"><span>Dados — 2025</span><span class="problem-arrow">↗</span></header><p class="problem-watermark">76%</p><footer class="problem-bottom"><h3>Base incompleta ou imprecisa</h3><p>Usuários dizem que menos da metade dos dados de CRM é precisa e completa.</p><p class="tags"><span class="tag">Validity 2025</span><span class="tag">Precisão</span></p></footer></article></li>
+          <li class="reveal" data-delay="2"><article class="problem-card"><header class="problem-meta"><span>Receita — 2025</span><span class="problem-arrow">↗</span></header><p class="problem-watermark">37%</p><footer class="problem-bottom"><h3>Perda direta de receita</h3><p>Organizações relatam perda de receita como consequência direta da baixa qualidade dos dados.</p><p class="tags"><span class="tag">Validity 2025</span><span class="tag">Impacto</span></p></footer></article></li>
+          <li class="reveal" data-delay="3"><article class="problem-card"><header class="problem-meta"><span>Produtividade — 2025</span><span class="problem-arrow">↗</span></header><p class="problem-watermark">13h</p><footer class="problem-bottom"><h3>Tempo procurando informações</h3><p>Tempo médio semanal gasto procurando informações básicas dentro do CRM.</p><p class="tags"><span class="tag">Validity 2025</span><span class="tag">Por semana</span></p></footer></article></li>
+        </ul>
+      </section>
     </section>
 
-    <section id="caso" class="case-study" aria-labelledby="case-title">
-      <header class="section-header">
-        <p class="eyebrow">Exemplo inspirado em uma operação real</p>
-        <h2 id="case-title">Um erro pequeno na regra pode se tornar uma perda relevante por campanha.</h2>
-        <p>
-          Em uma grande operação varejista, briefings de CRM precisam ser convertidos em consultas,
-          filtros e tratamentos antes de cada disparo. A conferência depende do entendimento do
-          analista e das regras mantidas pela equipe.
-        </p>
-      </header>
-
-      <article class="calculation-example">
-        <h3>Cenário hipotético por base</h3>
-        <p>
-          Considere uma campanha em que clientes elegíveis sejam removidos incorretamente durante
-          a preparação da audiência.
-        </p>
-
-        <dl class="calculation-data">
-          <dt>Tamanho da base</dt>
-          <dd>100.000 clientes</dd>
-
-          <dt>Clientes elegíveis removidos por erro</dt>
-          <dd>10% da base, ou 10.000 clientes</dd>
-
-          <dt>Conversão esperada</dt>
-          <dd>2%</dd>
-
-          <dt>Margem média por conversão</dt>
-          <dd>R$ 80</dd>
-
-          <dt>Perda potencial por campanha</dt>
-          <dd><strong>10.000 × 2% × R$ 80 = R$ 16.000</strong></dd>
-
-          <dt>Perda potencial em 12 campanhas</dt>
-          <dd><strong>R$ 192.000</strong></dd>
-        </dl>
-
-        <p>
-          <small>
-            Simulação ilustrativa. Os valores não representam resultados financeiros de uma
-            empresa específica e devem ser substituídos por dados validados em entrevistas ou
-            projetos-piloto.
-          </small>
-        </p>
-      </article>
+    <section class="framework" id="produto" aria-labelledby="frameworkTitle">
+      <section class="shell">
+        <h2 class="section-title reveal" data-delay="1" id="frameworkTitle">Uma camada de confiança entre o briefing e a ativação.</h2>
+        <ol class="framework-list">
+          <li class="reveal"><article class="framework-row"><span class="framework-index">01</span><h3>Cliente</h3><p>Equipes de CRM, Lifecycle, Marketing Operations e dados que preparam audiências para campanhas recorrentes.</p><span class="framework-arrow">↗</span></article></li>
+          <li class="reveal" data-delay="1"><article class="framework-row"><span class="framework-index">02</span><h3>Problema</h3><p>Regras fragmentadas, consultas manuais, conhecimento concentrado e ausência de validação estruturada antes da campanha.</p><span class="framework-arrow">↗</span></article></li>
+          <li class="reveal" data-delay="2"><article class="framework-row"><span class="framework-index">03</span><h3>Impacto</h3><p>Horas de conferência, segmentações incorretas, oportunidades perdidas e baixa confiança em automações e agentes de IA.</p><span class="framework-arrow">↗</span></article></li>
+          <li class="reveal" data-delay="3"><article class="framework-row"><span class="framework-index">04</span><h3>Solução</h3><p>Políticas estruturadas, capacidades determinísticas em Python, verificação independente e uma base preparada.</p><span class="framework-arrow">↗</span></article></li>
+        </ol>
+      </section>
     </section>
 
-    <section id="enquadramento" class="framework" aria-labelledby="framework-title">
-      <header class="section-header">
-        <p class="eyebrow">Cliente, problema, impacto e solução</p>
-        <h2 id="framework-title">Uma camada de confiança entre o briefing e a ativação.</h2>
-      </header>
-
-      <dl class="framework-list">
-        <dt><strong>Cliente</strong></dt>
-        <dd>
-          Equipes de CRM, Lifecycle, Marketing Operations e dados que preparam audiências para
-          campanhas recorrentes.
-        </dd>
-
-        <dt><strong>Problema</strong></dt>
-        <dd>
-          Regras de negócio fragmentadas, consultas manuais, conhecimento concentrado em pessoas
-          e ausência de uma validação estruturada antes da campanha.
-        </dd>
-
-        <dt><strong>Impacto</strong></dt>
-        <dd>
-          Horas de conferência, segmentações incorretas, perda de oportunidades, pressão indevida
-          de comunicação e baixa confiança em automações e agentes de IA.
-        </dd>
-
-        <dt><strong>Solução</strong></dt>
-        <dd>
-          Uma aplicação que converte o briefing em políticas estruturadas, orquestra capacidades
-          determinísticas em Python, verifica cada etapa e entrega auditoria e base preparada.
-        </dd>
-      </dl>
+    <section class="case" id="caso" aria-labelledby="caseTitle">
+      <section class="shell">
+        <article class="case-panel reveal">
+          <p class="eyebrow light">Exemplo inspirado em uma operação real</p>
+          <h2 class="section-title" id="caseTitle">Um erro pequeno na regra pode se tornar uma perda relevante por campanha.</h2>
+          <p class="case-copy">Simulação com conversão esperada de 2% e margem média de R$ 80 por conversão.</p>
+          <ul class="stats-grid">
+            <li class="reveal"><p class="stat-value" data-count="100000" data-format="number">0</p><p class="stat-label">clientes na base simulada</p></li>
+            <li class="reveal" data-delay="1"><p class="stat-value" data-count="10000" data-format="number">0</p><p class="stat-label">clientes elegíveis removidos por erro — 10% da base</p></li>
+            <li class="reveal" data-delay="2"><p class="stat-value" data-count="16000" data-format="currency">R$ 0</p><p class="stat-label">perda potencial por campanha</p></li>
+            <li class="reveal" data-delay="3"><p class="stat-value" data-count="192000" data-format="currency">R$ 0</p><p class="stat-label">perda potencial em 12 campanhas</p></li>
+          </ul>
+          <p class="case-note">Simulação ilustrativa. Os valores não representam resultados financeiros de uma empresa específica e devem ser substituídos por dados validados em entrevistas ou projetos-piloto.</p>
+        </article>
+      </section>
     </section>
-
-    <section id="produto" class="product" aria-labelledby="product-title">
-      <header class="section-header">
-        <p class="eyebrow">Proposta de valor</p>
-        <h2 id="product-title">Transformar intenção de campanha em dados verificáveis e prontos para uso.</h2>
-        <p>
-          O CRM Preflight está sendo desenvolvido para reduzir a distância entre o que o briefing
-          solicita e o que a base realmente contém.
-        </p>
-      </header>
-
-      <blockquote class="value-proposition">
-        <p>
-          “Agentes interpretam e orquestram. Métodos determinísticos executam os cálculos. Um
-          verificador independente acompanha a integridade do processo.”
-        </p>
-      </blockquote>
-
-      <ul class="benefit-list">
-        <li>Políticas de campanha estruturadas e versionáveis.</li>
-        <li>Regras adaptáveis ao contexto de cada empresa.</li>
-        <li>Cálculos executados por classes e métodos controlados.</li>
-        <li>Diagnóstico explicável das inconsistências encontradas.</li>
-        <li>Registro dos processos realizados e de suas justificativas.</li>
-        <li>Base estruturada para download ou integração com outros agentes.</li>
-      </ul>
-    </section>
-
-    <section id="funcionamento" class="how-it-works" aria-labelledby="how-title">
-      <header class="section-header">
-        <p class="eyebrow">Como funcionará</p>
-        <h2 id="how-title">Do briefing à base preparada.</h2>
-      </header>
-
-      <ol class="process-list">
-        <li>
-          <article class="process-step">
-            <h3>Entrada</h3>
-            <p>O usuário fornece briefing, base e regras adicionais em linguagem natural.</p>
-          </article>
-        </li>
-
-        <li>
-          <article class="process-step">
-            <h3>Política</h3>
-            <p>O agente tradutor transforma a intenção em uma política estruturada em JSON.</p>
-          </article>
-        </li>
-
-        <li>
-          <article class="process-step">
-            <h3>Auditoria</h3>
-            <p>
-              O agente auditor interpreta a política e orquestra as classes e os métodos
-              disponíveis na aplicação.
-            </p>
-          </article>
-        </li>
-
-        <li>
-          <article class="process-step">
-            <h3>Verificação</h3>
-            <p>Um agente independente acompanha as etapas e verifica a integridade dos resultados.</p>
-          </article>
-        </li>
-
-        <li>
-          <article class="process-step">
-            <h3>Entrega</h3>
-            <p>
-              O usuário recebe classificação, inconsistências, processos realizados, justificativas
-              e uma nova base estruturada.
-            </p>
-          </article>
-        </li>
-      </ol>
-    </section>
-
-    <section id="em-breve" class="coming-soon" aria-labelledby="coming-soon-title">
-      <header class="section-header">
-        <p class="eyebrow">Em breve</p>
-        <h2 id="coming-soon-title">Estamos construindo o primeiro preflight para campanhas de CRM.</h2>
-        <p>
-          O projeto está na fase de validação da dor, definição das regras e desenvolvimento do
-          MVP. A primeira aplicação será voltada a uma campanha de reativação com dados simulados.
-        </p>
-      </header>
-
-      <ul class="status-list">
-        <li>Pesquisa de mercado e problema em andamento.</li>
-        <li>Validação com profissionais de CRM.</li>
-        <li>Arquitetura da aplicação e contratos sendo definidos.</li>
-        <li>Interface e demonstração inicial em desenvolvimento.</li>
-      </ul>
-    </section>
-
-    <section id="equipe" class="team" aria-labelledby="team-title">
-      <header class="section-header">
-        <p class="eyebrow">Equipe</p>
-        <h2 id="team-title">Experiência em CRM, dados, produto e engenharia.</h2>
-      </header>
-
-      <ul class="team-list">
-        <li>
-          <article class="team-member">
-            <h3>Cauã Sarraf</h3>
-            <p>Produto e Engenharia</p>
-            <p>
-              Estudante de Engenharia da Computação no Insper, com experiência em CRM,
-              segmentação, comportamento do cliente, dados e automação em Python.
-            </p>
-          </article>
-        </li>
-      </ul>
-    </section>
-
-    <aside id="fontes" class="sources" aria-labelledby="sources-title">
-      <header class="section-header">
-        <h2 id="sources-title">Fontes</h2>
-      </header>
-
-      <ul class="source-list">
-        <li>
-          <a
-            href="https://www.validity.com/resource-center/hubs/state-of-crm-data/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Validity — State of CRM Data Report 2026
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.prnewswire.com/news-releases/validity-releases-state-of-crm-data-management-in-2025-report-revealing-disconnect-between-data-quality-and-ai-implementation-302499899.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Validity — State of CRM Data Management 2025
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.usecarly.com/blog/crm-statistics/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Carly — CRM Statistics 2026
-          </a>
-        </li>
-      </ul>
-    </aside>
   </main>
 
-  <footer class="site-footer">
-    <p><strong>CRM Preflight</strong></p>
-    <p>Dados confiáveis antes da campanha.</p>
-    <p><small>Produto em desenvolvimento. Conteúdo e funcionalidades sujeitos a validação.</small></p>
+  <footer class="site-footer" id="funcionamento">
+    <section class="footer-inner shell">
+      <header class="footer-cta reveal"><section><h2>Transformar intenção de campanha em dados verificáveis e prontos para uso.</h2></section><button class="pill light with-icon js-open-modal" type="button">Conhecer a proposta <span class="pill-icon">↗</span></button></header>
+      <ol class="process-strip" aria-label="Como funcionará">
+        <li class="process-step"><small>01 / Entrada</small><strong>Briefing, base e regras</strong><p>O usuário fornece os insumos em linguagem natural.</p></li>
+        <li class="process-step"><small>02 / Política</small><strong>Intenção estruturada</strong><p>O agente tradutor gera uma política em JSON.</p></li>
+        <li class="process-step"><small>03 / Auditoria</small><strong>Métodos controlados</strong><p>O agente orquestra as classes disponíveis na aplicação.</p></li>
+        <li class="process-step"><small>04 / Verificação</small><strong>Integridade acompanhada</strong><p>Um agente independente verifica cada etapa.</p></li>
+        <li class="process-step"><small>05 / Entrega</small><strong>Auditoria + base</strong><p>Classificação, justificativas e base estruturada.</p></li>
+      </ol>
+      <section class="footer-columns">
+        <article class="footer-column" id="equipe"><p class="brand"><svg class="icon brand-mark" viewBox="0 0 48 48"><path fill="currentColor" d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg>Dragon-fly</p><p class="footer-brand-copy"><strong>CRM Preflight.</strong><br />Políticas estruturadas, auditoria verificável e base pronta para o próximo processo.</p><p class="founder-note"><strong>Cauã Sarraf — Produto e Engenharia</strong><br />Estudante de Engenharia da Computação no Insper, com experiência em CRM, segmentação, comportamento do cliente, dados e automação em Python.</p></article>
+        <nav class="footer-column" aria-label="Produto"><h3>Produto</h3><ul><li>Políticas versionáveis</li><li>Regras adaptáveis</li><li>Cálculos controlados</li><li>Diagnóstico explicável</li><li>Rastreabilidade</li><li>Base estruturada</li></ul></nav>
+        <nav class="footer-column" aria-label="Status"><h3>Em desenvolvimento</h3><ul><li>Pesquisa de mercado em andamento</li><li>Validação com profissionais de CRM</li><li>Arquitetura sendo definida</li><li>Interface inicial em desenvolvimento</li></ul></nav>
+        <nav class="footer-column" id="fontes" aria-label="Fontes"><h3>Fontes</h3><ul><li><a href="https://www.validity.com/resource-center/hubs/state-of-crm-data/" target="_blank" rel="noreferrer">Validity 2026</a></li><li><a href="https://www.prnewswire.com/news-releases/validity-releases-state-of-crm-data-management-in-2025-report-revealing-disconnect-between-data-quality-and-ai-implementation-302499899.html" target="_blank" rel="noreferrer">Validity 2025</a></li><li><a href="https://www.usecarly.com/blog/crm-statistics/" target="_blank" rel="noreferrer">Carly 2026</a></li></ul></nav>
+      </section>
+      <section class="footer-legal" aria-label="Informações legais"><span>© 2026 Dragon-fly · CRM Preflight.</span><span>Produto em desenvolvimento. Conteúdo e funcionalidades sujeitos a validação.</span></section>
+    </section>
+    <p class="footer-watermark">PREFLIGHT</p>
   </footer>
+
+  <aside class="overlay" id="navMenu" aria-hidden="true">
+    <header class="overlay-top shell"><p class="brand"><svg class="icon brand-mark" viewBox="0 0 48 48"><path fill="currentColor" d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg>Dragon-fly</p><button class="close-button" id="closeMenu" type="button">× Fechar</button></header>
+    <nav class="overlay-nav shell" aria-label="Menu em tela cheia"><ul>
+      <li><button type="button" data-scroll="home"><small>01</small>Início</button></li><li><button type="button" data-scroll="mercado"><small>02</small>Mercado</button></li><li><button type="button" data-scroll="problema"><small>03</small>Problema</button></li><li><button type="button" data-scroll="produto"><small>04</small>Produto</button></li><li><button type="button" data-scroll="funcionamento"><small>05</small>Como funciona</button></li><li><button type="button" data-scroll="equipe"><small>06</small>Equipe</button></li>
+    </ul></nav>
+    <footer class="overlay-bottom shell"><span>Hora local — <span class="js-time">1:00am</span></span><button class="js-open-modal" type="button">Conhecer o projeto →</button></footer>
+  </aside>
+
+  <aside class="modal" id="requestModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <article class="modal-panel">
+      <button class="modal-x" id="closeModal" type="button" aria-label="Fechar">×</button>
+      <section id="modalFormState">
+        <header class="modal-heading"><p class="eyebrow">Conheça o projeto</p><h2 id="modalTitle">Quer acompanhar o desenvolvimento?</h2></header>
+        <form class="modal-form" id="interestForm">
+          <label class="field"><span>Nome</span><input name="name" type="text" placeholder="Seu nome" required /></label>
+          <label class="field"><span>Email</span><input name="email" type="email" placeholder="voce@empresa.com" required /></label>
+          <label class="field"><span>Contexto</span><textarea name="context" rows="4" placeholder="Conte brevemente como sua equipe prepara e valida bases de CRM." required></textarea></label>
+          <footer class="modal-bottom"><p class="modal-note">Demonstração local: nenhuma informação é enviada para um servidor.</p><button class="pill dark with-icon" type="submit">Registrar interesse <span class="pill-icon">↗</span></button></footer>
+        </form>
+      </section>
+      <section class="success" id="modalSuccess"><p class="success-badge"><svg class="icon" viewBox="0 0 48 48"><path fill="currentColor" d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z"/></svg></p><h2>Interesse registrado nesta demonstração</h2><p>Este formulário ainda não possui backend. Quando você integrar a API, esta confirmação poderá representar um envio real.</p><button class="pill dark" id="successClose" type="button">Fechar</button></section>
+    </article>
+  </aside>
+
+  <script src="dragonfly.js"></script>
 </body>
 </html>
+
+
