@@ -38,6 +38,39 @@ requestAnimationFrame(loadFrame);
 const observer = new IntersectionObserver(entries=>entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in-view'); observer.unobserve(entry.target); }}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
+const teamAccordion = document.querySelector('.team-accordion');
+if(teamAccordion){
+  const teamCards = [...teamAccordion.querySelectorAll('.team-card')];
+  const teamTriggers = teamCards.map(card=>card.querySelector('.team-card-trigger'));
+  const closeTeamCards = ()=>{
+    teamAccordion.classList.remove('has-active');
+    teamCards.forEach(card=>card.classList.remove('is-active'));
+    teamTriggers.forEach(trigger=>trigger.setAttribute('aria-expanded','false'));
+  };
+  const openTeamCard = (selectedCard, selectedTrigger)=>{
+    const isAlreadyOpen = selectedCard.classList.contains('is-active');
+    closeTeamCards();
+    if(isAlreadyOpen) return;
+    teamAccordion.classList.add('has-active');
+    selectedCard.classList.add('is-active');
+    selectedTrigger.setAttribute('aria-expanded','true');
+  };
+  teamTriggers.forEach((trigger,index)=>{
+    trigger.addEventListener('click',()=>openTeamCard(teamCards[index],trigger));
+    trigger.addEventListener('keydown',event=>{
+      const lastIndex=teamTriggers.length-1;
+      let nextIndex=index;
+      if(event.key==='ArrowRight'||event.key==='ArrowDown') nextIndex=index===lastIndex?0:index+1;
+      else if(event.key==='ArrowLeft'||event.key==='ArrowUp') nextIndex=index===0?lastIndex:index-1;
+      else if(event.key==='Escape'){closeTeamCards();trigger.blur();return;}
+      else return;
+      event.preventDefault();
+      teamTriggers[nextIndex].focus();
+    });
+  });
+  document.addEventListener('click',event=>{if(!teamAccordion.contains(event.target)) closeTeamCards();});
+}
+
 function updateClock(){
   const now=new Date(); let hour=now.getHours(); const meridiem=hour>=12?'pm':'am'; hour=hour%12||12;
   const time=`${hour}:${String(now.getMinutes()).padStart(2,'0')}${meridiem}`;
